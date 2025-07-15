@@ -45,3 +45,10 @@ li {
 .title {
     font-size: 3em;
 }
+
+/*
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+*/
