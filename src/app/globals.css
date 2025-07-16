@@ -20,7 +20,7 @@ p {
 
 a {
     text-decoration: none;
-    color: #b1b1b1;
+    color: #e1e1e1;
     transition: color 0.2s ease;
 }
 
@@ -44,6 +44,46 @@ li {
 
 .title {
     font-size: 3em;
+}
+
+nav {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10 30px;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    min-width: auto;
+}
+
+.nav-mid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+}
+
+nav a {
+    padding: 10px 20px;
+    font-size: 1.8em;
+}
+
+.nav-right img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+.nav-right img:hover {
+    transform: scale(1.2);
 }
 
 /*
