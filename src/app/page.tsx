@@ -1,18 +1,20 @@
+import Link from 'next/link';
+
 export default function MyApp() {
   return (
     <>
       <nav>
         <div className="nav-left">
-          <a href="/">home</a>
-          <a href="/movie">movie</a>
-          <a href="/tv">tv</a>
-          <a href="/anime">anime</a>
+          <Link href="/">home</Link>
+          <Link href="/movie">movie</Link>
+          <Link href="/tv">tv</Link>
+          <Link href="/anime">anime</Link>
         </div>
         <div className="nav-mid">
-          <a href="/">solarstream</a>
+          <Link href="/">solarstream</Link>
         </div>
         <div className="nav-right">
-          <a href="https://github.com/Neetify7/solarstream" target="_blank"><img src="/github-mark-white.svg"/></a>
+          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><img src="/github-mark-white.svg"/></Link>
         </div>
       </nav>
     </>
