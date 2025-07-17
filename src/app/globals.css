@@ -59,6 +59,7 @@ nav {
     display: flex;
     align-items: center;
     min-width: auto;
+    font-family: "Montserrat", Serif;
 }
 
 .nav-mid {
@@ -75,7 +76,6 @@ nav {
 nav a {
     padding: 10px 20px;
     font-size: 1.8em;
-    font-family: "Montserrat", Serif;
 }
 
 /*
