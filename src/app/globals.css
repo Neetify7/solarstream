@@ -51,7 +51,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10 30px;
+    padding: 30px 75px;
 }
 
 .nav-left,
@@ -68,7 +68,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: "Montserrat", Serif;
 }
 
@@ -77,12 +77,13 @@ nav a {
     font-size: 1.8em;
 }
 
-.nav-right img {
-    transition: transform 0.2s ease;
+.nav-right {
+    color: #e1e1e1;
+    transition: color 0.2s ease;
 }
 
-.nav-right img:hover {
-    transform: scale(1.2);
+.nav-right:hover {
+    color: #ff5d5d;
 }
 
 /*
