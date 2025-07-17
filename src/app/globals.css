@@ -68,7 +68,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8em;
+    font-size: 2em;
     font-family: "Montserrat", Serif;
 }
 
@@ -78,8 +78,6 @@ nav a {
 }
 
 .nav-right img {
-    width: 35px;
-    height: auto;
     transition: transform 0.2s ease;
 }
 

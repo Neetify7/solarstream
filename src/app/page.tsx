@@ -15,7 +15,7 @@ export default function MyApp() {
           <Link href="/">solarstream</Link>
         </div>
         <div className="nav-right">
-          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><Image src="/github-mark-white.svg" alt={'GitHub'}/></Link>
+          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><Image src="/github-mark-white.svg" alt={'GitHub'} width={'35'} height={'35'}/></Link>
         </div>
       </nav>
     </>
