@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function MyApp() {
   return (
@@ -14,7 +15,7 @@ export default function MyApp() {
           <Link href="/">solarstream</Link>
         </div>
         <div className="nav-right">
-          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><img src="/github-mark-white.svg"/></Link>
+          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><Image src="/github-mark-white.svg" alt={'GitHub'}/></Link>
         </div>
       </nav>
     </>
