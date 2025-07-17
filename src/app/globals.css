@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Montserrat", Serif;
+    font-family: "Playfair Display", Serif;
     background-color: #000000;
     color: #e1e1e1;
 }
@@ -75,15 +75,6 @@ nav {
 nav a {
     padding: 10px 20px;
     font-size: 1.8em;
-}
-
-.nav-right {
-    color: #e1e1e1;
-    transition: color 0.2s ease;
-}
-
-.nav-right:hover {
-    color: #ff5d5d;
 }
 
 /*

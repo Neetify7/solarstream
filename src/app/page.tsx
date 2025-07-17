@@ -1,13 +1,33 @@
+'use client'
+import React from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+function GitHub() {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <FontAwesomeIcon
+      icon={faGithub}
+      size="lg"
+      style={{
+        color: hover ? '#ff5d5d' : '#e1e1e1',
+        transition: 'color 0.2s ease',
+        fill: 'currentColor',
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    />
+  );
+}
 
 export default function MyApp() {
   return (
     <>
-      <Head>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-pap6IIBqfN2rMN6WhDdWc6yfqJG1Wix4Vt0gPkA8OnT4avY5xxTWB2tSOMcYc1wsmnM7Jo6OJfFwja95g4UsWg==" crossOrigin="anonymous" referrerPolicy="no-referrer"/>
-      </Head>
       <nav>
         <div className="nav-left">
           <Link href="/">home</Link>
@@ -19,10 +39,12 @@ export default function MyApp() {
           <Link href="/">solarstream</Link>
         </div>
         <div className="nav-right">
-          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><i className="fa-brands fa-github fa-lg"></i></Link>
+          <Link href="https://github.com/Neetify7/solarstream" target="_blank"><GitHub/></Link>
         </div>
       </nav>
-      <script src="https://kit.fontawesome.com/9cc56a0cf2.js" crossOrigin="anonymous"></script>
+      <div className="center">
+        <p>hello</p>
+      </div>
     </>
   );
 }
