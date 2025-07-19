@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Nav from './components/nav';
 
 function GitHub() {
@@ -27,7 +28,10 @@ export default function MyApp() {
     <>
       <Nav/>
       <div className="center">
-        <p>hello</p>
+        <div className="input-button-container">
+          <input type="text" placeholder="Search movies, tv, and anime" />
+          <button className="search-button"><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+        </div>
       </div>
     </>
   );
