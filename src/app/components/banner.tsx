@@ -10,36 +10,24 @@ interface Movie {
 const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-interface BannerCarouselProps {
-  category?: "movie" | "tv" | "16";
-}
-
-const BannerCarousel: React.FC<BannerCarouselProps> = ({ category = "movie" }) => {
+const BannerCarousel: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    async function fetchData() {
-      let url = "";
-
-      if (category === "movie" || category === "tv") {
-        url = `${TMDB_BASE_URL}/${category}/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`;
-      } else if (category === "16") {
-        url = `${TMDB_BASE_URL}/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&with_genres=16&page=1`;
-      }
-
+    async function fetchPopularMovies() {
       try {
-        const res = await fetch(url);
+        const res = await fetch(
+          `${TMDB_BASE_URL}/movie/popular?api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=en-US&page=1`
+        );
         const data = await res.json();
-        setMovies(data.results || []);
-        setCurrentIndex(0);
+        setMovies(data.results);
       } catch (error) {
-        console.error("Failed to fetch:", error);
-        setMovies([]);
+        console.error("Failed to fetch movies:", error);
       }
     }
-    fetchData();
-  }, [category]);
+    fetchPopularMovies();
+  }, []);
 
   useEffect(() => {
     if (movies.length === 0) return;
