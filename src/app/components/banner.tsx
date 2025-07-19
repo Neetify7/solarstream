@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 interface Movie {
@@ -7,7 +9,6 @@ interface Movie {
   backdrop_path: string | null;
 }
 
-const TMDB_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 interface BannerCarouselProps {
@@ -20,21 +21,13 @@ const BannerCarousel: React.FC<BannerCarouselProps> = ({ category = "movie" }) =
 
   useEffect(() => {
     async function fetchData() {
-      let url = "";
-
-      if (category === "movie" || category === "tv") {
-        url = `${TMDB_BASE_URL}/${category}/popular?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`;
-      } else if (category === "16") {
-        url = `${TMDB_BASE_URL}/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&with_genres=16&page=1`;
-      }
-
       try {
-        const res = await fetch(url);
+        const res = await fetch(`/api/tmdb?category=${category}`);
         const data = await res.json();
         setMovies(data.results || []);
         setCurrentIndex(0);
       } catch (error) {
-        console.error("Failed to fetch:", error);
+        console.error("Failed to fetch movies:", error);
         setMovies([]);
       }
     }
